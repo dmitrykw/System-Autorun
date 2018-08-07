@@ -6,6 +6,7 @@ Showing AutoRuning Files from Registry, StartMenu, Sheduler  C#.Net WPF (MVVM) a
 Информация получается из Registry, Start Menu, Scheduler
 
 Выводимая информация
+
 a. Иконка файла
 b. Имя исполняемого файла.
 c. Параметры командной строки для запуска файла.
