@@ -1,0 +1,109 @@
+﻿<Window x:Class="StartupFiles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StartupFiles"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        mc:Ignorable="d"
+        Title="Autostart" MinWidth="800" MinHeight="450">
+    
+    <!-- Стиль внутреннего элемента ListView для растягивания по центру чекбоксов -->
+    <Window.Resources>
+        <Style TargetType="ListViewItem" x:Key="listViewItemStyle">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <!--Bindings к ViewModel  -->
+        <ListView Margin="10,10,0,0" ItemsSource="{Binding ProgramsCollection, Mode=OneWay}" ItemContainerStyle="{StaticResource listViewItemStyle}" SelectedItem="{Binding SelectedPrgrm}">
+            <!-- Обработка события DoubleMouseClick вызывает команду  OpenFilePathFolderCommand с параметрами SelectedPrgrm (св-во в котором находится экземпляр выбранного элемента Listview)-->
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction
+                            Command="{Binding OpenFilePathFolderCommand}"
+                            CommandParameter="{Binding SelectedPrgrm}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <ListView.View >
+                <GridView>
+                    <!-- "Элементы коллекции элементов во ViewModel-->
+                    <GridViewColumn Header="" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- Картинка из иконки полученной из ресурсов файла-->
+                                <Image Name="Icon" Grid.Column="0" Height="20" Width="20" Stretch="Fill" Source="{Binding Icon}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn Header="File Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- Имя файла-->
+                                <TextBlock Name="FileName" Grid.Column="1" Text="{Binding FileName}" Margin="5,0,0,0"  />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="File Path">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- Путь к файлу-->
+                                <TextBlock Name="FilePath" Grid.Column="3" Text="{Binding FilePath}" Margin="5,0,0,0"  />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="CmdLine Parameters">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- Параметры командной строки-->
+                                <TextBlock Name="CmdlineParams" Grid.Column="2" Text="{Binding CmdlineParams}" Margin="5,0,0,0"  />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Startup Type">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- Тип запуска (Registry,Scheduler,StartMenu)-->
+                                <TextBlock Name="StartupType" Grid.Column="4" Text="{Binding StartupType}" Margin="5,0,0,0"  />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Signature Present">
+                        <GridViewColumn.CellTemplate >
+                            <DataTemplate>
+                                <!-- Наличие цифровой подписи-->
+                                <CheckBox Name="IsSignaturePresent" Grid.Column="5" IsChecked="{Binding IsSignaturePresent}" Margin="5,0,0,0" IsEnabled="False" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Signature Validity">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- Корректность и актуальность цифровой подписи-->
+                                <CheckBox Name="IsSignatureCorrect" Grid.Column="6" IsChecked="{Binding IsSignatureCorrect}" Margin="5,0,0,0" IsEnabled="False" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Company">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- Название компании (из цифровой подписи либо из FileInfo при отсутвии подписи)-->
+                                <TextBlock Name="Company" Grid.Column="7" Text="{Binding Company}" Margin="5,0,0,0"  />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+    </Grid>
+</Window>

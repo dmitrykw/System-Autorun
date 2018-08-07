@@ -1,0 +1,36 @@
+C:\Users\renkt\AppData\Local\Temporary Projects\StartupFiles\obj\Debug\StartupFiles.csprojAssemblyReference.cache
+C:\Users\renkt\AppData\Local\Temporary Projects\StartupFiles\obj\Debug\MainWindow.g.cs
+C:\Users\renkt\AppData\Local\Temporary Projects\StartupFiles\obj\Debug\App.g.cs
+C:\Users\renkt\AppData\Local\Temporary Projects\StartupFiles\obj\Debug\StartupFiles_MarkupCompile.cache
+C:\Users\renkt\AppData\Local\Temporary Projects\StartupFiles\obj\Debug\StartupFiles_MarkupCompile.lref
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\StartupFiles.exe.config
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\StartupFiles.exe
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\StartupFiles.pdb
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.csprojAssemblyReference.cache
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\MainWindow.g.cs
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\App.g.cs
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles_MarkupCompile.cache
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles_MarkupCompile.lref
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\MainWindow.baml
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.g.resources
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.Properties.Resources.resources
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.csproj.GenerateResource.cache
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.csproj.CoreCompileInputs.cache
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.exe
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.pdb
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\Interop.Shell32.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.csproj.ResolveComReference.cache
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\Interop.TaskScheduler.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\renkt\OneDrive\Documents\Visual Studio 2017\Projects\StartupFiles\StartupFiles\obj\Debug\StartupFiles.csproj.CopyComplete
