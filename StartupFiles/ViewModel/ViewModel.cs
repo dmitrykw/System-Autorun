@@ -2,6 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.ComponentModel;
+using Microsoft.Win32;
+using System.Security.Cryptography.X509Certificates;
 
 namespace StartupFiles
 {
@@ -77,6 +79,111 @@ namespace StartupFiles
 
 
 
+        //Команда открыть то место где прописана автозагрузка выбранной программы
+        private RelayCommand openfileautorunplace;
+        public RelayCommand OpenFileAutorunPlace
+        {
+            get
+            {
+                return openfileautorunplace ??
+                  (openfileautorunplace = new RelayCommand(obj =>
+                  {
+                      Prgrm CurrnetPrgrm = (Prgrm)obj;//Приводим переданный объект к типу Prgrm                      
+
+
+                      ProcessStartInfo startInfo = new ProcessStartInfo("Explorer"); //Создаем экземпляр процесса
+                      string registryLastKey = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit";
+                      string registryLocation = "";
+
+                      switch (CurrnetPrgrm.StartupType)
+                      {
+                          case "Registry - Current User":
+
+                             
+                              registryLocation = @"Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+                              
+                              try
+                              {
+                                  Registry.SetValue(registryLastKey, "LastKey", registryLocation); // Set LastKey value that regedit will go directly to
+                                  Process.Start("regedit.exe");
+                              }
+                              catch{}
+                              
+
+                              break;
+
+                          case "Registry - Local Machine":
+
+                              registryLocation = @"Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run";                              
+                              try
+                              {
+                                  Registry.SetValue(registryLastKey, "LastKey", registryLocation); // Set LastKey value that regedit will go directly to
+                                  Process.Start("regedit.exe");
+                              }
+                              catch { }
+                              break;
+
+                          case "Task Scheduler":
+
+                              Process.Start("taskschd.msc");
+
+                              break;
+
+                          case "Start Menu - Current User":                              
+
+                              //Открываем папку текущего файла в Explorer и выделяем нужный файл                              
+                              startInfo.UseShellExecute = false; //Не использовать оболочку операционной системы для запуска процесса                                                            
+                              startInfo.Arguments = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Startup);  //Аргументы
+                              Process.Start(startInfo); //Запускаем процесс
+
+                              break;
+                          case "Start Menu -All Users":
+                              //Открываем папку текущего файла в Explorer и выделяем нужный файл                              
+                              startInfo.UseShellExecute = false; //Не использовать оболочку операционной системы для запуска процесса                                                            
+                              startInfo.Arguments = System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonStartup);  //Аргументы
+                              Process.Start(startInfo); //Запускаем процесс
+                              break;
+                          
+                      }
+                      
+                     
+
+
+                  }));
+            }
+        }
+
+        //Команда открыть Информацию о сертификате выбранной программы
+        private RelayCommand openfilecertinfo;
+        public RelayCommand OpenFileCertInfo
+        {
+            get
+            {
+                return openfilecertinfo ??
+                  (openfilecertinfo = new RelayCommand(obj =>
+                  {
+                      Prgrm CurrnetPrgrm = (Prgrm)obj;//Приводим переданный объект к типу Prgrm                      
+
+                      if (!CurrnetPrgrm.IsSignaturePresent)
+                      {
+                          System.Windows.MessageBox.Show("No Signature");
+                          return;
+                      }
+
+                      X509Certificate cert1 = X509Certificate.CreateFromSignedFile(CurrnetPrgrm.FilePath);     //Создаем экземпляр сертификата
+                                                                                                                                                                                                           //Проверяем валидность
+                      var cert2 = new X509Certificate2(cert1.Handle);
+                      X509Certificate2UI.DisplayCertificate(cert2); //Показываем сертификат
+
+                   
+
+                  }));
+            }
+        }
+
+
+
+        
 
 
         // реализация интерфейса INotifyPropertyChanged

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StartupFiles"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
-        Title="Autostart" MinWidth="800" MinHeight="450">
+        Title="Autostart" MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     
     <!-- Стиль внутреннего элемента ListView для растягивания по центру чекбоксов -->
     <Window.Resources>
@@ -16,7 +16,7 @@
     </Window.Resources>
     <Grid>
         <!--Bindings к ViewModel  -->
-        <ListView Margin="10,10,0,0" ItemsSource="{Binding ProgramsCollection, Mode=OneWay}" ItemContainerStyle="{StaticResource listViewItemStyle}" SelectedItem="{Binding SelectedPrgrm}">
+        <ListView Margin="10,10,10,10" ItemsSource="{Binding ProgramsCollection, Mode=OneWay}" ItemContainerStyle="{StaticResource listViewItemStyle}" SelectedItem="{Binding SelectedPrgrm}">
             <!-- Обработка события DoubleMouseClick вызывает команду  OpenFilePathFolderCommand с параметрами SelectedPrgrm (св-во в котором находится экземпляр выбранного элемента Listview)-->
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
@@ -102,7 +102,16 @@
 
                 </GridView>
             </ListView.View>
-
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name ="prgrm_location" Header="Open File Location"  Command="{Binding OpenFilePathFolderCommand}" CommandParameter="{Binding SelectedPrgrm}" >
+                    </MenuItem>
+                    <MenuItem Name ="prgrm_autorun_location" Header="Open Program Autorun Location"  Command="{Binding OpenFileAutorunPlace}" CommandParameter="{Binding SelectedPrgrm}" >
+                    </MenuItem>
+                    <MenuItem Name ="prgrm_cert_info" Header="Open Program Cert info"  Command="{Binding OpenFileCertInfo}" CommandParameter="{Binding SelectedPrgrm}" >
+                    </MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
         </ListView>
 
     </Grid>
