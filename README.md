@@ -1,6 +1,6 @@
 # System-Autorun
 
-![](Screenshots/Main.jpg)
+[](Screenshots/Main.jpg)
 
 Showing AutoRuning Files from Registry, StartMenu, Sheduler  C#.Net WPF (MVVM) async/await
 
