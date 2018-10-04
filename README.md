@@ -1,4 +1,7 @@
 # System-Autorun
+
+![](Screenshots/Main.jpg)
+
 Showing AutoRuning Files from Registry, StartMenu, Sheduler  C#.Net WPF (MVVM) async/await
 
 Приложение C#.Net WPF (MVVM) выводит в элемент ListView информацию о запускающихся при старте системы программах.
